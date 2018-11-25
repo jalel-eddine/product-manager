@@ -1,4 +1,4 @@
-package com.riahi.dao;
+package com.riahi.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

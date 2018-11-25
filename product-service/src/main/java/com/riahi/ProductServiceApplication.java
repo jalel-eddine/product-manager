@@ -11,11 +11,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.util.SystemPropertyUtils;
 
-import com.riahi.dao.CategorieRepository;
-import com.riahi.dao.ProduitRepository;
 import com.riahi.entities.Categorie;
 import com.riahi.entities.Produit;
-import com.riahi.metier.ProductMangerService;
+import com.riahi.repository.CategorieRepository;
+import com.riahi.repository.ProduitRepository;
+import com.riahi.service.ProductMangerService;
 
 @SpringBootApplication
 public class ProductServiceApplication {

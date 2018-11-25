@@ -1,4 +1,4 @@
-package com.riahi.metier;
+package com.riahi.service;
 
 import java.util.List;
 

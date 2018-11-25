@@ -1,4 +1,4 @@
-package com.riahi.metier;
+package com.riahi.service;
 
 import static org.hamcrest.CoreMatchers.nullValue;
 
@@ -9,10 +9,10 @@ import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.riahi.dao.CategorieRepository;
-import com.riahi.dao.ProduitRepository;
 import com.riahi.entities.Categorie;
 import com.riahi.entities.Produit;
+import com.riahi.repository.CategorieRepository;
+import com.riahi.repository.ProduitRepository;
 
 /**
  * @author Jalel Eddine
