@@ -59,10 +59,10 @@ class InjectData implements CommandLineRunner {
 			productMangerService.enregistrerProduit(new Produit(nP), c2 ) ;
 		});
 		
-		System.out.println("-------------------------------------");
+		System.out.println("-------------------------------------"+ c1);
 		c1.getProduits()
 			.forEach(lp -> System.out.println(lp.getIdProduit() + " "+lp.getDesignation()));
-		System.out.println("-------------------------------------");
+		System.out.println("-------------------------------------"+ c2);
 		c2.getProduits()
 		.forEach(lp -> System.out.println(lp.getIdProduit() + " "+lp.getDesignation()));
 		

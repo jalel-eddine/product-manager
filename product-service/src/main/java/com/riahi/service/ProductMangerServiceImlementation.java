@@ -45,8 +45,8 @@ public class ProductMangerServiceImlementation implements ProductMangerService {
 
 	@Override
 	public Produit enregistrerProduit(Produit p , Categorie c ) {
-		produitRepository.save(p) ;
-		c.getProduits().add(p) ;
+		Produit prod = produitRepository.save(p) ;
+		c.getProduits().add(prod) ;
 		return p;
 	}
 
