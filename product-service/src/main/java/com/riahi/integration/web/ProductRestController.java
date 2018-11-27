@@ -40,7 +40,7 @@ public class ProductRestController {
 		
 	}
 	
-	@GetMapping("produit/{id}")
+	@GetMapping("produits/{id}")
 	public Produit getProduit(@PathVariable Long id){
 		return productMangerService.getProduit(id) ;
 		
@@ -52,9 +52,9 @@ public class ProductRestController {
 		
 	}
 	
-	@GetMapping("/{id}")
+	@GetMapping("/categories/{id}")
 	public Categorie getCategorie(@PathVariable Long id){
-		return categorieRepository.getOne(id) ;
+		return productMangerService.getCategorie(id) ;
 		
 	}
 }

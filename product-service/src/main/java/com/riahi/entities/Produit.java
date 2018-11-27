@@ -2,7 +2,6 @@
 package com.riahi.entities;
 
 import javax.persistence.Entity;
-import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,7 +23,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+ @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Produit {
 
 	@Id 
@@ -35,9 +34,11 @@ public class Produit {
 		
 	private double prix;
 
-	@ManyToOne                          
-	@JoinColumn(name="idCategori" )      
-	private Categorie categorie;
+	/*@ManyToOne                          
+	@JoinColumn(name="idCategori")      
+	private Categorie categorie;*/
+	
+	private String nomCategorie ;
 
 
 	public Produit(String designation) {

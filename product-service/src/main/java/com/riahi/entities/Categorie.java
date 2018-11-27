@@ -39,11 +39,8 @@ public class Categorie {
 	
 	private String nomPhoto;
 	
-	/*@OneToMany(mappedBy="categorie" , fetch = FetchType.EAGER, cascade = CascadeType.ALL)       
-	private Collection<Produit> Produits  ;*/
-	
-	@OneToMany(mappedBy="categorie" , fetch = FetchType.EAGER)       
-	private Collection<Produit> Produits;
+	/*@OneToMany(mappedBy="categorie" , fetch = FetchType.EAGER, cascade = CascadeType.ALL)        
+	private Collection<Produit> Produits  ;  */
 
 	public Categorie(String nomCategorie) { 
 		super();

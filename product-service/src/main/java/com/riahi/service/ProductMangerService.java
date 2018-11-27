@@ -1,5 +1,6 @@
 package com.riahi.service;
 
+import java.util.Collection;
 import java.util.List;
 
 import com.riahi.entities.Categorie;
@@ -21,7 +22,7 @@ public interface ProductMangerService {
 	public List<Produit> listProduit();
 	public Produit getProduit(Long idProd);
 	public Produit getProdByDes(String designation);
-	public Produit enregistrerProduit(Produit p , Categorie c );
+	public Produit enregistrerProduit(Produit p , Long idCat );
 	public void supprimerProduit(Long idproduit);
 	
 }

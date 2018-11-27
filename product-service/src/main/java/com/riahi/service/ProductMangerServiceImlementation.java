@@ -2,6 +2,7 @@ package com.riahi.service;
 
 import static org.hamcrest.CoreMatchers.nullValue;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,10 +45,17 @@ public class ProductMangerServiceImlementation implements ProductMangerService {
 
 
 	@Override
-	public Produit enregistrerProduit(Produit p , Categorie c ) {
-		Produit prod = produitRepository.save(p) ;
-		c.getProduits().add(prod) ;
-		return p;
+	public Produit enregistrerProduit(Produit p , Long idCat ) {
+		if(categorieRepository.findById(idCat)== null) {
+			System.out.println("verifier categorie");
+		}
+		
+		produitRepository.save(p) ;
+		
+		p.setNomCategorie(categorieRepository.getOne(idCat).getNomCategorie());
+		
+		 
+		return p ;
 	}
 
 	@Override
