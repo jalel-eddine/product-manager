@@ -33,10 +33,6 @@ public class Produit {
 	private String designation ;
 		
 	private double prix;
-
-	/*@ManyToOne                          
-	@JoinColumn(name="idCategori")      
-	private Categorie categorie;*/
 	
 	private String nomCategorie ;
 
