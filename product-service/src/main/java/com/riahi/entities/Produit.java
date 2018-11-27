@@ -2,6 +2,7 @@
 package com.riahi.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -35,7 +36,7 @@ public class Produit {
 	private double prix;
 
 	@ManyToOne                          
-	@JoinColumn(name="idCategori")      
+	@JoinColumn(name="idCategori" )      
 	private Categorie categorie;
 
 
