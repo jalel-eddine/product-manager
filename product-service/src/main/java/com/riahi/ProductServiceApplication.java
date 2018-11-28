@@ -32,27 +32,13 @@ class InjectData implements CommandLineRunner {
 
 	@Autowired
 	public ProductMangerService productMangerService ;
-	@Autowired
-	ProduitRepository Product;
-	@Autowired 
-	CategorieRepository catt ;
+
 	
 	
 	@Override
 	public void run(String... args) throws Exception {
 		
-		//final Log logger = LogFactory.getLog(getClass());
-		
-		/*Stream.of("AAAAAAA", "BBBBBBB" , "CCCCCCCC" , "DDDDDDDD" , "EEEEEEE" , "FFFFFFFFFF")
-			.forEach(c -> productMangerService.enregistrerCategorie(new Categorie(c)) );
-		
-		productMangerService.listCategorie()
-			.forEach(l -> System.out.println( l.getIdCategori()+ " "+l.getNomCategorie()));
-	
-		Categorie c1 = productMangerService.getCatByDes("AAAAAAA") ;
-		Categorie c2 = productMangerService.getCatByDes("BBBBBBB") ;*/
-		
-		
+
 		Categorie cat1 = productMangerService.enregistrerCategorie(new Categorie("aaaaaaaaa")) ;
 		Categorie cat2 = productMangerService.enregistrerCategorie(new Categorie("bbbbbbbbb")) ;
 		
@@ -69,13 +55,7 @@ class InjectData implements CommandLineRunner {
 		
 		productMangerService.listCategorie()
 		.forEach(l -> System.out.println( l.getIdCategori()+ " "+l.getNomCategorie()));
-		
-		/*System.out.println("-------------------------------------"+ c1);
-		c1.getProduits()
-			.forEach(lp -> System.out.println(lp.getIdProduit() + " "+lp.getDesignation()));
-		System.out.println("-------------------------------------"+ c2);
-		c2.getProduits()
-		.forEach(lp -> System.out.println(lp.getIdProduit() + " "+lp.getDesignation()));*/
+
 		
 	}
 	

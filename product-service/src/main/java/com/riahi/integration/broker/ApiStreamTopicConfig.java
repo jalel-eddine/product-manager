@@ -13,12 +13,17 @@ public interface ApiStreamTopicConfig {
 
 	String INPUT_PROD = "produit-in" ;
 	
+	String INPUT_ID_PROD = "id-produit-in" ;
+	
 	String INPUT_CAT = "categorie-in" ;
 	
 	String INPUT_ID_CAT = "id-categorie-in" ;
 	
 	@Input(INPUT_PROD)
 	SubscribableChannel inboundProduit() ;
+	
+	@Input(INPUT_ID_PROD)
+	SubscribableChannel inboundIdProduit() ;
 	
 	@Input(INPUT_CAT)
 	SubscribableChannel inboundCategorie() ;

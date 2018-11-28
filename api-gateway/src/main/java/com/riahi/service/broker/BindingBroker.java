@@ -1,4 +1,4 @@
-package com.riahi.service.broker;
+/*package com.riahi.service.broker;
 
 import org.springframework.cloud.stream.annotation.EnableBinding;
 
@@ -6,3 +6,4 @@ import org.springframework.cloud.stream.annotation.EnableBinding;
 public class BindingBroker {
 
 }
+*/

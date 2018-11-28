@@ -15,7 +15,7 @@ public interface ProductMangerService {
 
 	public List<Categorie> listCategorie();
 	public Categorie getCategorie(Long idCat);
-	public Categorie getCatByDes(String designation);
+	public Categorie getCatByDes(String nomcategorie);
 	public Categorie enregistrerCategorie(Categorie c );
 	public void supprimerCategorie(Long idCat);
 	

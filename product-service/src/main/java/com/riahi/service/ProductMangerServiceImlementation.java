@@ -89,9 +89,9 @@ public class ProductMangerServiceImlementation implements ProductMangerService {
 	}
 
 	@Override
-	public Categorie getCatByDes(String designation) {
+	public Categorie getCatByDes(String nomcategorie) {
 		
-		return categorieRepository.findByNomCategorie(designation);
+		return categorieRepository.findByNomCategorie(nomcategorie);
 	}
 
 	@Override

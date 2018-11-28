@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -88,8 +89,7 @@ public class ProductRestController {
 		return produit;          
 	}
 	
-	@PostMapping("/ajouterCat")
-	
+	@PutMapping("/ajouterCat")
 	public Categorie creatCategorie(@RequestBody Categorie categorie) throws Exception {
 		
 		
@@ -101,11 +101,25 @@ public class ProductRestController {
 	
 	
 	@DeleteMapping("/deleteCat/{id}")
-	public void suppSousCat(@PathVariable Long id) {
+	public void suppCattegorie(@PathVariable Long id) {
 		
-		productServiceBroker.sendIdToDelete(id);
+		productServiceBroker.sendIdCatToDelete(id);
 	}
 	
+	@PutMapping("/ajouterProd")
+	public Produit creatproduit(@RequestBody Produit produit) throws Exception {
+		
+		
+		productServiceBroker.sendProduit(produit);
+		
+		return produit ;
+
+	}
 	
+	@DeleteMapping("/deleteProd/{id}")
+	public void suppProduits(@PathVariable Long id) {
+		
+		productServiceBroker.sendIdProdToDelete(id);
+	}
 	
 }

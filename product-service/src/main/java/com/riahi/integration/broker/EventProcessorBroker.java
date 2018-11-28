@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.riahi.entities.Categorie;
+import com.riahi.entities.Produit;
 import com.riahi.service.ProductMangerService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -42,8 +43,28 @@ public class EventProcessorBroker {
 	}
 	
 	@StreamListener(ApiStreamTopicConfig.INPUT_ID_CAT)
-	public void handlerDeleteSousCat( Long id) {
+	public void handlerDeleteCat( Long id) {
 		productMangerService.supprimerCategorie(id);
+	}
+	
+	@StreamListener(ApiStreamTopicConfig.INPUT_PROD)
+	public void handlerProduit( Produit produit) throws Exception{  
+		
+		log.info("Received CATEGORIE : {}", produit.toString());
+		
+		Categorie c = productMangerService.getCatByDes(produit.getNomCategorie())  ;       
+		
+	    productMangerService.enregistrerProduit(produit, c.getIdCategori()) ;
+	    
+	    System.out.println("============================================== ");
+	    System.out.println(" its OK PRODUIT SAVED");
+	    System.out.println("============================================== ");
+
+	}
+	
+	@StreamListener(ApiStreamTopicConfig.INPUT_ID_PROD)
+	public void handlerDeleteProd( Long id) {
+		productMangerService.supprimerProduit(id);
 	}
 	
 }
