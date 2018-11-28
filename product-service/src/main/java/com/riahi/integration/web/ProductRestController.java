@@ -28,12 +28,6 @@ public class ProductRestController {
 	@Autowired
 	public ProductMangerService productMangerService ;
 	
-	@Autowired
-	public CategorieRepository categorieRepository ;
-	
-	@Autowired
-	public ProduitRepository produitRepository ;
-	
 	@GetMapping("/produits")
 	public List<Produit> getProduits(){
 		return productMangerService.listProduit();

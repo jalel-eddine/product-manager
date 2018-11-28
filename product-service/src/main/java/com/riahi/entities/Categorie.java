@@ -31,7 +31,7 @@ public class Categorie {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long idCategori;
+	private Long idCategori;
   
 	private String nomCategorie;
 	

@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Categorie {
 
-	private long idCategori;
+	private Long idCategori;
 	  
 	private String nomCategorie;
 	
