@@ -36,7 +36,6 @@ public class Produit {
 	
 	private String nomCategorie ;
 
-
 	public Produit(String designation) {
 		super();
 		this.designation = designation;

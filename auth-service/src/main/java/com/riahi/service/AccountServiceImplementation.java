@@ -35,6 +35,7 @@ public class AccountServiceImplementation implements AccountService {
 
 		String hashPW=bCryptPasswordEncoder.encode(user.getPassword());
 		user.setPassword(hashPW);
+		user.getRoles().add(appRoleRepository.findByRolename("USER")) ;
 		return appUserRepository.save(user);
 	}
 

@@ -6,14 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import com.riahi.entities.AppRole;
 import com.riahi.entities.AppUser;
 import com.riahi.service.AccountService;
 
-//@EnableDiscoveryClient
+@EnableDiscoveryClient
 @SpringBootApplication
 public class AuthServiceApplication {
 
@@ -24,11 +26,6 @@ public class AuthServiceApplication {
 
 @Configuration
 class InjectData implements CommandLineRunner {
-
-	@Bean
-	public BCryptPasswordEncoder passwordEncoder() {
-	    return new BCryptPasswordEncoder();
-	}
 	
 	@Autowired
 	AccountService accountService ;
@@ -36,14 +33,22 @@ class InjectData implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		Stream.of("adminCat , 1234 " , "adminProd, 1234 ")
-		.map(s-> s.split(" , "))
-		.forEach(tup -> accountService.saveUser(new AppUser(null ,tup[0], tup[1] , null)));
 		
-		System.out.println("=======================================");
+		Stream.of("ADMIN" , "USER")
+			.forEach(r -> accountService.saveRole(new AppRole(r)));
+		System.out.println("================== 1 =====================");
+		
+		accountService.saveUser(new AppUser( "admin", "1234")) ;
+		accountService.saveUser(new AppUser("user" , "1234" )) ;
+		
+		System.out.println("================== 2 =====================");
 		accountService.listUser()
 		.forEach(u-> System.out.println(u.getUsername()));
-		System.out.println("=======================================");
+		System.out.println("================== 3 =====================");
+		
+		accountService.addRoleToUser("admin", "ADMIN");
+	
+		
 		
 	}
 	

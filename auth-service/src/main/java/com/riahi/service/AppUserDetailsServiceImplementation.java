@@ -30,7 +30,6 @@ public class AppUserDetailsServiceImplementation implements UserDetailsService {
 		AppUser appUser =  accountService.getUsername(username) ;
 		
 		if(appUser== null) throw new UsernameNotFoundException("username ou mot de passe incorrect") ;
-		//if(user.isActived()==false) throw new UsernameNotFoundException("Votre compte est désactivé, contacter l'administration du forum");
 		
 		Collection<GrantedAuthority> authorities = new ArrayList<>() ;
 		appUser.getRoles().forEach(r -> {

@@ -50,7 +50,7 @@ public class EventProcessorBroker {
 	@StreamListener(ApiStreamTopicConfig.INPUT_PROD)
 	public void handlerProduit( Produit produit) throws Exception{  
 		
-		log.info("Received CATEGORIE : {}", produit.toString());
+		log.info("Received PRODUIT : {}", produit.toString());
 		
 		Categorie c = productMangerService.getCatByDes(produit.getNomCategorie())  ;       
 		
