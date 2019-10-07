@@ -10,7 +10,7 @@ That is a simple project to manage products and categories create in distributed
 
 - Netflix Eureka service discovery
  
-- Kafka and Spring Cloud Stream  to nennect microservices
+- Kafka and Spring Cloud Stream  to conennect microservices
 
 - Zuul Proxy Router and Filter in api gateway 
 
